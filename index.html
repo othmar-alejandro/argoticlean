@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argoti Sunshine Clean | Miami's Premium Cleaning Service</title>
+    <meta name="description" content="Miami's most trusted cleaning service. Residential, Airbnb, deep cleaning & commercial. Book your transformation today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+    <!-- ======================= NAVIGATION ======================= -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand">
+                <img src="public/images/logo.png" alt="Argoti Sunshine Clean Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:7869343686" class="btn btn-outline-dark">
+                    <i class="ri-phone-line"></i> Call Us
+                </a>
+                <a href="#booking" class="btn btn-solid">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======================= HERO ======================= -->
+    <header class="hero">
+        <!-- Decorative radial blobs -->
+        <div class="hero-bg-shape hbs-1"></div>
+        <div class="hero-bg-shape hbs-2"></div>
+        <div class="hero-bg-shape hbs-3"></div>
+
+        <!-- Sparkle decorations -->
+        <i class="ri-sparkling-fill sparkle sp-1"></i>
+        <i class="ri-sparkling-2-line sparkle sparkle-sm sp-2"></i>
+        <i class="ri-sparkling-fill sparkle sparkle-sm sp-3"></i>
+        <i class="ri-sparkling-2-line sparkle sparkle-lg sp-4"></i>
+        <i class="ri-sparkling-fill sparkle sp-5"></i>
+        <i class="ri-sparkling-2-line sparkle sparkle-sm sp-6"></i>
+
+        <div class="hero-body">
+            <div class="hero-container hero-split">
+
+                <!-- LEFT: Content -->
+                <div class="hero-left">
+                    <div class="hero-badge animate-up">
+                        <span class="pulse-dot"></span>
+                        Miami's Cleaning Standard
+                    </div>
+
+                    <h1 class="hero-title animate-up">
+                        BRING SHINE<br>
+                        &amp; COMFORT<br>
+                        TO EVERY <span class="accent-word">Space</span>
+                    </h1>
+
+                    <p class="hero-subtitle animate-up">
+                        We don't just clean — we restore your peace of mind. Trusted by 523+ Miami families and businesses with eco-friendly products and meticulous care.
+                    </p>
+
+                    <div class="trust-row animate-up">
+                        <span class="trust-pill"><i class="ri-shield-check-fill text-green"></i> Fully Insured</span>
+                        <span class="trust-pill"><i class="ri-leaf-fill text-green"></i> Eco-Friendly</span>
+                        <span class="trust-pill"><i class="ri-thumb-up-fill"></i> Satisfaction Guaranteed</span>
+                    </div>
+
+                    <div class="hero-cta-group animate-up">
+                        <a href="#booking" class="btn btn-cta-white magnetic-btn">Book Your Cleaning <i class="ri-arrow-right-line"></i></a>
+                        <a href="tel:7869343686" class="btn btn-outline-dark magnetic-btn"><i class="ri-phone-line"></i> (786) 934-3686</a>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Professional Photo -->
+                <div class="hero-right animate-fade-left">
+                    <div class="hero-image-wrap">
+                        <img src="public/images/hispanic_cleaner_nobg.png" alt="Argoti Sunshine Clean Professional" class="hero-model-img parallax-img">
+                        <img src="public/images/logo.png" alt="Logo" class="hero-shirt-logo">
+
+                        <!-- Floating proof card - left -->
+                        <div class="float-card fc-1 float-anim-1">
+                            <div class="fc-icon"><i class="ri-sparkling-fill"></i></div>
+                            <div class="fc-text">
+                                <strong>5-Star Service</strong>
+                                <span>Trusted by 523+ locals</span>
+                            </div>
+                        </div>
+
+                        <!-- Floating proof card - right -->
+                        <div class="float-card fc-2 float-anim-2">
+                            <div class="users-stack">
+                                <img src="public/images/logo.png" alt="Argoti Logo">
+                            </div>
+                            <div class="fc-text">
+                                <strong>10,000+ Hrs</strong>
+                                <span>Combined Experience</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Booking Widget: Overlaps hero/stats seam -->
+    <div class="hero-booking-bar">
+        <div class="container">
+            <div class="booking-glass-pill">
+                <form action="booking.html" class="inline-booking-form">
+                    <div class="input-group">
+                        <i class="ri-home-heart-line icon"></i>
+                        <select name="service" required>
+                            <option value="" disabled selected>What Service Do You Need?</option>
+                            <option value="residential">Residential Cleaning</option>
+                            <option value="deep">Deep Clean</option>
+                            <option value="airbnb">Airbnb Turnover</option>
+                            <option value="commercial">Commercial Cleaning</option>
+                        </select>
+                    </div>
+                    <div class="pill-divider"></div>
+                    <div class="input-group">
+                        <i class="ri-map-pin-line icon"></i>
+                        <select name="city" required>
+                            <option value="" disabled selected>Choose Your City</option>
+                            <option value="miami">Miami, FL</option>
+                            <option value="coral_gables">Coral Gables</option>
+                            <option value="brickell">Brickell</option>
+                            <option value="doral">Doral</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-navy" style="white-space: nowrap;">Get Estimate <i class="ri-arrow-right-line"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================= STATS STRIP ======================= -->
+    <section class="stats-strip">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item slide-up">
+                    <div class="stat-number">523<span>+</span></div>
+                    <div class="stat-label">Happy Families Served</div>
+                </div>
+                <div class="stat-item slide-up">
+                    <div class="stat-number">97.3<span>%</span></div>
+                    <div class="stat-label">Customer Satisfaction</div>
+                </div>
+                <div class="stat-item slide-up">
+                    <div class="stat-number">1,247<span>+</span></div>
+                    <div class="stat-label">Homes Cleaned</div>
+                </div>
+                <div class="stat-item slide-up">
+                    <div class="stat-number">98.8<span>%</span></div>
+                    <div class="stat-label">Satisfaction Guarantee</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= SERVICES — BENTO GRID ======================= -->
+    <section class="bento-section" id="services">
+        <div class="container section-intro slide-up">
+            <p class="tagline">What We Offer</p>
+            <h2>The Argoti Standard</h2>
+            <p>We transform your environment through meticulous care, flexible scheduling, and absolute professionalism.</p>
+        </div>
+
+        <div class="container bento-grid">
+            <!-- Row 1 (2 + 1) -->
+            <div class="bento-card b-large span-2 slide-up">
+                <div class="card-content">
+                    <div class="icon-orb"><i class="ri-hotel-bed-line"></i></div>
+                    <div>
+                        <h3>5-Star Airbnb Readiness</h3>
+                        <p>Designed aggressively for property managers. Rigorous attention to detail that continuously secures perfect 5-star ratings from tough guests.</p>
+                    </div>
+                </div>
+                <div class="bg-shape shape-blue"></div>
+                <div class="bg-shape shape-star"><i class="ri-sparkling-fill"></i></div>
+            </div>
+
+            <div class="bento-card b-medium slide-up">
+                <div class="card-content">
+                    <div class="icon-orb"><i class="ri-home-gear-line"></i></div>
+                    <div>
+                        <h3>Post-Construction</h3>
+                        <p>Removing dust and debris to make builds perfectly move-in ready.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2 (1 + 2) -->
+            <div class="bento-card b-medium slide-up">
+                <div class="card-content">
+                    <div class="icon-orb"><i class="ri-building-line"></i></div>
+                    <div>
+                        <h3>Commercial / Office</h3>
+                        <p>Impress clients and staff with a spotless, sanitized workspace.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-card b-medium b-dark span-2 slide-up">
+                <div class="card-content">
+                    <div class="icon-orb"><i class="ri-shield-check-line"></i></div>
+                    <div>
+                        <h3 class="text-white">Consistent Quality</h3>
+                        <p class="text-light">We check everything twice. Enjoy complete peace of mind.</p>
+                    </div>
+                </div>
+                <div class="bg-shape shape-glow"></div>
+            </div>
+
+            <!-- Row 3 (full width) -->
+            <div class="bento-card b-large span-3 outline-style slide-up">
+                <div class="card-content row-flex">
+                    <div class="text-block" style="max-width:60%">
+                        <h3>Deep Residential Cleaning</h3>
+                        <p>Our heavy-duty process resets your home. Baseboards, ovens, windows, walls, and all the unseen details.</p>
+                        <a href="#checklist" class="link-arrow">See Full Checklist <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                    <div class="abstract-sparkles">
+                        <i class="ri-sparkling-2-line spark-1"></i>
+                        <i class="ri-sparkling-fill spark-2"></i>
+                        <i class="ri-magic-line spark-3"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= CHECKLIST ======================= -->
+    <section class="checklist-section" id="checklist">
+        <div class="container checklist-grid">
+            <div class="check-visual fade-in">
+                <div class="sticky-orb-visual">
+                    <div class="glass-orb text-center">
+                        <img src="public/images/logo.png" alt="Argoti Logo">
+                        <h2>Deep Clean<br>Standard</h2>
+                        <span class="tag">Total Transparency</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="check-list-items">
+                <div class="cl-title slide-up">
+                    <p class="tagline">What's Included</p>
+                    <h2>The Comprehensive Process</h2>
+                    <p class="subtitle">Every element of your home is addressed systematically by our trained teams to ensure zero blind spots.</p>
+                </div>
+
+                <div class="list-wrapper">
+                    <div class="list-item slide-up">
+                        <div class="li-content">
+                            <div class="li-icon"><i class="ri-check-line"></i></div>
+                            <div class="li-text">
+                                <h4>Floors &amp; Baseboards</h4>
+                                <p>Deep sweep, vacuum, and mop. Meticulous baseboard dusting.</p>
+                            </div>
+                        </div>
+                        <img src="public/images/clean_floors.png" class="li-img" alt="Clean floors">
+                    </div>
+                    <div class="list-item slide-up">
+                        <div class="li-content">
+                            <div class="li-icon"><i class="ri-check-line"></i></div>
+                            <div class="li-text">
+                                <h4>Surfaces &amp; Air Flow</h4>
+                                <p>Complete dusting of all tables, shelves, ceiling fans, and vent covers.</p>
+                            </div>
+                        </div>
+                        <img src="public/images/clean_surfaces.png" class="li-img" alt="Clean surfaces">
+                    </div>
+                    <div class="list-item slide-up">
+                        <div class="li-content">
+                            <div class="li-icon"><i class="ri-check-line"></i></div>
+                            <div class="li-text">
+                                <h4>Kitchen Transformation</h4>
+                                <p>Full sanitize, heavy degreasing of ovens, counters, and cabinets.</p>
+                            </div>
+                        </div>
+                        <img src="public/images/clean_kitchen.png" class="li-img" alt="Clean kitchen">
+                    </div>
+                    <div class="list-item slide-up">
+                        <div class="li-content">
+                            <div class="li-icon"><i class="ri-check-line"></i></div>
+                            <div class="li-text">
+                                <h4>Bathrooms &amp; Sanitize</h4>
+                                <p>Disinfecting tiles, grout lines, bathtubs, sinks, and mirrors to absolute shine.</p>
+                            </div>
+                        </div>
+                        <img src="public/images/clean_bathroom.png" class="li-img" alt="Clean bathroom">
+                    </div>
+                    <div class="list-item slide-up">
+                        <div class="li-content">
+                            <div class="li-icon"><i class="ri-check-line"></i></div>
+                            <div class="li-text">
+                                <h4>Final Polish</h4>
+                                <p>Wall touch-ups, changing linens perfectly, patio sweeps, and window insides.</p>
+                            </div>
+                        </div>
+                        <img src="public/images/clean_bedroom.png" class="li-img" alt="Clean bedroom">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= CTA ======================= -->
+    <section class="cta-section" id="booking">
+        <div class="container">
+            <div class="cta-container scale-up">
+                <div class="cta-content text-center">
+                    <h2>Ready for a Spotless Space?</h2>
+                    <p class="text-light mt-1 mb-3 mx-auto max-w-md">
+                        Join 523+ Miamians who trust Argoti Sunshine Clean with their most valuable spaces.
+                    </p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-giant btn-primary magnetic-btn">Book Your Transformation</button>
+                        <a href="tel:7869343686" class="btn btn-giant btn-outline-white magnetic-btn">
+                            <i class="ri-phone-line"></i> 786-934-3686
+                        </a>
+                    </div>
+                </div>
+                <div class="cta-ring r-1"></div>
+                <div class="cta-ring r-2"></div>
+                <i class="ri-sparkling-fill cta-sparkle cs-1"></i>
+                <i class="ri-sparkling-2-line cta-sparkle cs-2"></i>
+                <i class="ri-sparkling-fill cta-sparkle cs-3"></i>
+                <i class="ri-sparkling-2-line cta-sparkle cs-4"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <img src="public/images/logo.png" alt="Argoti Sunshine Clean" class="footer-brand-img">
+                <p>Bringing sunshine and spotless perfection to every home and business in Miami, Florida.</p>
+                <div class="socials">
+                    <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#solutions">Why Us</a></li>
+                        <li><a href="#checklist">Deep Checklist</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Argoti Sunshine Clean. All rights reserved.</p>
+            <p class="credit">System Architecture by <a href="#">OAC Digital</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

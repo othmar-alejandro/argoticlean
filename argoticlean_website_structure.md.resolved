@@ -1,0 +1,61 @@
+# Argoti Sunshine Clean - Single Page Website Structure Proposal
+
+**Theme & Vibe:** Reliable, Professional, Detailed. Premium cleaning service that creates "Next-Level Spotless" spaces. The focus is on *transforming* spaces (as seen on their socials), not just cleaning them.
+
+**Color Palette Guidance:** Blues (matching their uniform/logo), White for cleanliness, and subtle Gold/Yellow accents reminiscent of the "Sunshine" brand name.
+
+---
+
+## 1. Hero Section (First Impression)
+*   **Background:** High-quality background image or subtle video loop showing a pristine, transformed space (or the team in action at a recognizable location, like the University of Miami).
+*   **Headline:** "Transforming Spaces in Miami. Next-Level Spotless."
+*   **Sub-headline:** Residential, Commercial, and Airbnb cleaning you can rely on.
+*   **Primary Call-to-Action (CTA):** `Book Your Cleaning` (Links directly to the scheduling widget).
+*   **Trust Badges:** "Serving Miami & Surrounding Areas", "Professional & Detailed".
+
+## 2. Pain Points & The "Argoti Solution"
+*   **Concept:** Address why people hate cleaning or struggle to find good cleaners, and position Argoti as the stress-free solution.
+*   **Pain Points:** 
+    *   *Tired of cleaners who miss the details?*
+    *   *Struggling to keep your Airbnb ready for five-star reviews?*
+    *   *Post-construction dust settling everywhere?*
+*   **The Switch:** "At Argoti Sunshine Clean, we don't just clean—we TRANSFORM spaces. Enjoy peace of mind knowing every corner is spotless."
+
+## 3. Our Services
+*Highlights of their core offerings, using icons or image cards.*
+*   **Residential Cleaning:** Standard upkeep for homes and apartments.
+*   **Deep Cleaning:** Intense sanitization, including steam cleaning and pressure washing.
+*   **Airbnb Turnover:** Fast, reliable, and rigorous cleaning designed to secure 5-star ratings.
+*   **Post-Construction Cleanup:** Removing heavy dust and debris to make new builds move-in ready.
+*   **Commercial & Office:** Keeping your workspace professional and sanitized.
+
+## 4. Featured: The Deep Cleaning Checklist
+*Since the provided image features such a great, detailed checklist, we should highlight this to show transparency and thoroughness.*
+*   **Title:** "What’s Included in Our Deep Cleaning?"
+*   **Layout:** A clean, scannable grid with checkmarks.
+*   **List Items (from image):**
+    *   Sweep, Mop, Vacuum
+    *   Dust all surfaces & clean ceiling fans
+    *   Disinfect bathrooms & mirrors
+    *   Clean windows, outside of closets, and baseboards
+    *   Deep clean entire kitchen & degrease ovens (x2)
+    *   Clean walls throughout the home
+    *   Clean sofas and dining rooms
+    *   Clean the garage & patio
+    *   Change bed linens & make beds
+
+## 5. About Us (History & Mission)
+*   **Photo:** A great shot of the team in their branded uniforms.
+*   **Mission:** "To bring sunshine and spotless perfection to every home and business in Miami."
+*   **History/Story:** A brief blurb about being a dedicated, local Miami team committed to reliability and detail. Highlighting their experience working with prestigious spaces (like the U of M).
+
+## 6. Booking & Scheduling Section
+*   **Widget:** An embedded scheduling calendar (like Calendly, Acuity, or a custom Stripe/booking flow like you've built previously). 
+*   **Text:** "Ready for a transformation? Schedule your cleaning today. Fast, easy booking."
+
+## 7. Contact & Footer
+*   **Contact Info:** 
+    *   Phone: (786) 934-3686 (Click-to-call)
+    *   Service Area: Miami, FL & Surrounding Areas
+*   **Social Links:** Instagram link.
+*   **Footer:** Standard copyright, privacy policy, and "Website built by OAC Digital Innovations".
