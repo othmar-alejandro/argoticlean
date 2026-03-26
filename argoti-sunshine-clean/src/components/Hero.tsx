@@ -105,47 +105,50 @@ export default function Hero() {
           </div>
 
           {/* RIGHT: Hero image */}
-          <div className="hero-image-container relative flex justify-center lg:justify-end">
+          <div className="hero-image-container relative flex justify-center lg:justify-end mt-16 lg:mt-0 w-full lg:w-[500px] mx-auto lg:mr-0">
+            {/* The Arch Background Container */}
+            <div className="relative w-full max-w-[380px] aspect-[4/5] rounded-t-[12rem] rounded-b-[3rem] overflow-hidden bg-white shadow-2xl border-[10px] border-white z-0 mt-10">
+              <img
+                src="/images/luxury_miami_condo_bg.png"
+                alt="Luxury Miami Home Interior"
+                className="w-full h-full object-cover object-center scale-105 opacity-90 blur-[2px]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1a3a5c]/20 via-transparent to-black/5" />
+            </div>
+
+            {/* The cut-out cleaner breaking out of the frame */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-[48%] w-[130%] max-w-[580px] z-10 pointer-events-none pb-2">
+              <img
+                src="/images/hispanic_cleaner_nobg.png"
+                alt="Argoti Sunshine Clean Professional"
+                className="w-full h-auto object-contain drop-shadow-2xl"
+              />
+            </div>
+
             {/* Floating stats card — top-left */}
-            <div className="absolute -top-4 -left-4 z-20 float-anim" style={{ animationDelay: '0.3s' }}>
-              <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-white px-4 py-3 flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-[#E8A020]/15 flex items-center justify-center">
-                  <Star size={17} className="text-[#E8A020]" />
+            <div className="absolute top-24 -left-4 md:-left-12 z-20 float-anim" style={{ animationDelay: '0.3s' }}>
+              <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-white px-5 py-4 flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl bg-[#E8A020]/15 flex items-center justify-center">
+                  <Star size={18} className="text-[#E8A020]" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-[#1d1d1f]">5-Star Service</div>
-                  <div className="text-[11px] text-[#6e6e73]">523+ Miami families</div>
+                  <div className="text-[15px] font-bold text-[#1d1d1f] tracking-tight">5-Star Service</div>
+                  <div className="text-xs text-[#6e6e73] font-medium mt-0.5">523+ Miami families</div>
                 </div>
               </div>
             </div>
 
             {/* Floating stats card — bottom-right */}
-            <div className="absolute -bottom-4 -right-2 z-20 float-anim" style={{ animationDelay: '0.8s' }}>
-              <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-white px-4 py-3 flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-[#00b4a6]/15 flex items-center justify-center">
-                  <ShieldCheck size={17} className="text-[#00b4a6]" />
+            <div className="absolute bottom-16 -right-2 md:-right-8 z-20 float-anim" style={{ animationDelay: '0.8s' }}>
+              <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-white px-5 py-4 flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl bg-[#00b4a6]/15 flex items-center justify-center">
+                  <ShieldCheck size={18} className="text-[#00b4a6]" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-[#1d1d1f]">10,000+ Hours</div>
-                  <div className="text-[11px] text-[#6e6e73]">Combined experience</div>
+                  <div className="text-[15px] font-bold text-[#1d1d1f] tracking-tight">10,000+ Hours</div>
+                  <div className="text-xs text-[#6e6e73] font-medium mt-0.5">Combined experience</div>
                 </div>
               </div>
-            </div>
-
-            {/* Main image */}
-            <div className="relative w-full max-w-[520px]">
-              <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-[#E8A020]/20 to-[#00b4a6]/15 blur-2xl scale-95 -z-10" />
-              <img
-                src="/images/hispanic_cleaner_nobg.png"
-                alt="Argoti Sunshine Clean Professional"
-                className="w-full h-auto object-contain relative z-10 drop-shadow-2xl"
-              />
-              {/* Logo on shirt overlay */}
-              <img
-                src="/images/logo.png"
-                alt="Argoti Logo"
-                className="absolute bottom-[22%] right-[14%] w-16 z-20 opacity-90"
-              />
             </div>
           </div>
 
