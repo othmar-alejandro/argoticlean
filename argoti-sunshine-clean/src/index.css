@@ -38,13 +38,13 @@ html {
   color: var(--gold);
 }
 .text-gradient-argoti {
-  background: linear-gradient(135deg, var(--gold), var(--gold-light) 50%, var(--mint));
+  background: linear-gradient(135deg, var(--gold), var(--gold-light) 50%, var(--navy));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .text-gradient-sky {
-  background: linear-gradient(135deg, var(--sky), var(--mint));
+  background: linear-gradient(135deg, var(--sky), var(--navy));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

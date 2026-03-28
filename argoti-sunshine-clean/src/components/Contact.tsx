@@ -61,7 +61,7 @@ export default function Contact() {
             <div className="space-y-6">
               {[
                 { icon: Phone, title: 'Call Us', detail: '(786) 934-3686', link: 'tel:7869343686', accent: '#E8A020' },
-                { icon: Mail, title: 'Email Us', detail: 'info@argoticlean.com', link: 'mailto:info@argoticlean.com', accent: '#00b4a6' },
+                { icon: Mail, title: 'Email Us', detail: 'info@argoticlean.com', link: 'mailto:info@argoticlean.com', accent: '#1a3a5c' },
                 { icon: MapPin, title: 'Service Area', detail: 'Miami, FL & Surrounding Areas', link: '#', accent: '#1a3a5c' },
               ].map((item, index) => (
                 <a
@@ -105,7 +105,7 @@ export default function Contact() {
 
           {/* Right: Form */}
           <div className="contact-form relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#E8A020]/5 to-[#00b4a6]/5 rounded-[2.5rem] transform rotate-2 scale-105 -z-10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#E8A020]/5 to-[#1a3a5c]/5 rounded-[2.5rem] transform rotate-2 scale-105 -z-10" />
             <div className="bg-white/90 backdrop-blur-xl border border-gray-100 p-10 sm:p-12 rounded-[2.5rem] shadow-2xl">
               <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid sm:grid-cols-2 gap-8">

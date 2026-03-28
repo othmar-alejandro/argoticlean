@@ -32,7 +32,7 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-[#1d1d1f]/80 hover:text-[#1d1d1f] transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-[1.5px] after:bg-gradient-to-r after:from-[#E8A020] after:to-[#00b4a6] after:transition-all after:duration-300 hover:after:w-full"
+                className="text-sm font-medium text-[#1d1d1f]/80 hover:text-[#1d1d1f] transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-[1.5px] after:bg-gradient-to-r after:from-[#E8A020] after:to-[#1a3a5c] after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.label}
               </a>

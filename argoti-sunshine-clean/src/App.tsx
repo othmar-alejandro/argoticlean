@@ -1,6 +1,5 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import TrustBar from './components/TrustBar';
 import About from './components/About';
 import Services from './components/Services';
 import Booking from './components/Booking';
@@ -14,7 +13,6 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <TrustBar />
         <About />
         <Services />
         <Booking />

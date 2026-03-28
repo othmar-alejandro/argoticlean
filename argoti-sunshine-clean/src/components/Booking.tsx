@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Calendar as CalendarIcon, Clock, User, CheckCircle2, ChevronRight, ChevronLeft, Sparkles } from 'lucide-react';
+import { Calendar as CalendarIcon, Clock, User, CheckCircle2, ChevronRight, ChevronLeft, Sparkles, ChevronLeft as ChevronLeftIcon, ChevronRight as ChevronRightIcon } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,15 +12,27 @@ const services = ['Residential Cleaning', 'Deep Cleaning', 'Airbnb Turnover', 'C
 export default function Booking() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [step, setStep] = useState(1);
-  const [selectedDate, setSelectedDate] = useState<number | null>(null);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [selectedService, setSelectedService] = useState(services[0]);
 
-  const upcomingDates = Array.from({ length: 14 }, (_, i) => {
-    const d = new Date();
-    d.setDate(d.getDate() + i + 1);
-    return d;
-  });
+  // Calendar State
+  const [currentMonth, setCurrentMonth] = useState(new Date());
+
+  const year = currentMonth.getFullYear();
+  const month = currentMonth.getMonth();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const firstDay = new Date(year, month, 1).getDay(); // 0 is Sunday
+  
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const prevMonth = () => setCurrentMonth(new Date(year, month - 1, 1));
+  const nextMonth = () => setCurrentMonth(new Date(year, month + 1, 1));
+
+  const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+  const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -55,7 +67,7 @@ export default function Booking() {
   return (
     <section id="booking" ref={containerRef} className="py-32 bg-[#fbfbfd] relative overflow-hidden">
       {/* Background accent */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-gradient-to-tr from-[#E8A020]/8 to-[#00b4a6]/6 rounded-full blur-3xl -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-gradient-to-tr from-[#E8A020]/8 to-[#1a3a5c]/6 rounded-full blur-3xl -z-10" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="booking-title text-center mb-14">
@@ -70,7 +82,7 @@ export default function Booking() {
         </div>
 
         <div className="booking-widget relative group">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#E8A020]/20 to-[#00b4a6]/20 rounded-[2.5rem] blur-xl group-hover:blur-2xl transition-all duration-500 opacity-50 -z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#E8A020]/20 to-[#1a3a5c]/20 rounded-[2.5rem] blur-xl group-hover:blur-2xl transition-all duration-500 opacity-50 -z-10" />
           <div className="bg-white/85 backdrop-blur-2xl rounded-[2.5rem] shadow-2xl border border-white overflow-hidden flex flex-col lg:flex-row min-h-[600px]">
 
             {/* Left Sidebar */}
@@ -87,7 +99,7 @@ export default function Booking() {
                     <div>
                       <p className="text-xs text-white/50 font-semibold uppercase tracking-widest mb-1">Date & Time</p>
                       <p className="font-semibold text-white text-sm">
-                        {selectedDate !== null ? upcomingDates[selectedDate].toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }) : 'Select Date'}
+                        {selectedDate !== null ? selectedDate.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }) : 'Select Date'}
                         {selectedTime ? `, ${selectedTime}` : ''}
                       </p>
                     </div>
@@ -125,48 +137,91 @@ export default function Booking() {
                 <div className="step-1-content h-full flex flex-col">
                   <h3 className="text-2xl font-bold text-[#1d1d1f] mb-8 tracking-tight">Select Date & Time</h3>
 
-                  <div className="mb-8">
-                    <h4 className="font-semibold text-[#1d1d1f] text-sm mb-4 uppercase tracking-wider">Available Dates</h4>
-                    <div className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide snap-x">
-                      {upcomingDates.map((date, i) => (
-                        <button
-                          key={i}
-                          onClick={() => setSelectedDate(i)}
-                          className={`flex-shrink-0 w-[72px] h-[88px] rounded-2xl border flex flex-col items-center justify-center transition-all duration-300 snap-start ${
-                            selectedDate === i
-                              ? 'border-[#E8A020] bg-[#E8A020] text-white shadow-lg shadow-[#E8A020]/25 scale-105'
-                              : 'border-gray-200 hover:border-[#E8A020]/50 hover:bg-amber-50/50 text-[#1d1d1f] bg-white'
-                          }`}
-                        >
-                          <span className={`text-[10px] font-bold uppercase mb-1 ${selectedDate === i ? 'text-amber-100' : 'text-[#6e6e73]'}`}>{date.toLocaleDateString('en-US', { weekday: 'short' })}</span>
-                          <span className="text-xl font-bold tracking-tight">{date.getDate()}</span>
-                          <span className={`text-[10px] ${selectedDate === i ? 'text-amber-100' : 'text-[#6e6e73]'}`}>{date.toLocaleDateString('en-US', { month: 'short' })}</span>
-                        </button>
-                      ))}
+                  <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 mb-auto">
+                    
+                    {/* Calendar Interactive Block */}
+                    <div className="md:col-span-7">
+                      <h4 className="font-semibold text-[#1d1d1f] text-sm mb-4 uppercase tracking-wider flex items-center justify-between">
+                        Available Dates
+                        {/* Month Navigation */}
+                        <div className="flex items-center gap-2">
+                          <button onClick={prevMonth} className="p-1 hover:bg-gray-100 rounded-lg transition-colors text-gray-500 hover:text-[#1a3a5c]">
+                            <ChevronLeftIcon size={18} />
+                          </button>
+                          <span className="text-base font-bold text-[#1a3a5c] w-[120px] text-center">{monthNames[month]} {year}</span>
+                          <button onClick={nextMonth} className="p-1 hover:bg-gray-100 rounded-lg transition-colors text-gray-500 hover:text-[#1a3a5c]">
+                            <ChevronRightIcon size={18} />
+                          </button>
+                        </div>
+                      </h4>
+                      
+                      {/* Grid Calendar */}
+                      <div className="bg-white border border-gray-100 rounded-[1.5rem] p-5 shadow-sm">
+                        {/* Days Header */}
+                        <div className="grid grid-cols-7 mb-3">
+                          {dayNames.map(day => (
+                            <div key={day} className="text-center text-xs font-bold text-[#6e6e73] uppercase">{day}</div>
+                          ))}
+                        </div>
+                        
+                        {/* Days Grid */}
+                        <div className="grid grid-cols-7 gap-y-2 gap-x-2">
+                          {/* Empty prefix slots */}
+                          {Array.from({ length: firstDay }).map((_, i) => (
+                            <div key={`empty-${i}`} className="w-full aspect-square" />
+                          ))}
+                          
+                          {/* Calendar Days */}
+                          {Array.from({ length: daysInMonth }).map((_, i) => {
+                            const dateNum = i + 1;
+                            const cellDate = new Date(year, month, dateNum);
+                            const isPast = cellDate < today;
+                            const isSelected = selectedDate && 
+                                               selectedDate.getDate() === dateNum && 
+                                               selectedDate.getMonth() === month && 
+                                               selectedDate.getFullYear() === year;
+
+                            return (
+                              <button
+                                key={dateNum}
+                                disabled={isPast}
+                                onClick={() => setSelectedDate(cellDate)}
+                                className={`w-full aspect-square flex items-center justify-center rounded-xl text-base font-bold transition-all duration-200 
+                                  ${isPast ? 'text-gray-300 cursor-not-allowed' : 
+                                    isSelected ? 'bg-[#E8A020] text-white shadow-md shadow-[#E8A020]/25 scale-105' : 
+                                    'text-[#1d1d1f] hover:bg-amber-50 hover:text-[#E8A020]'}`}
+                              >
+                                {dateNum}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Time Slots Block */}
+                    <div className="md:col-span-5">
+                      <h4 className="font-semibold text-[#1d1d1f] text-sm mb-4 uppercase tracking-wider">Available Times</h4>
+                      <div className="grid grid-cols-2 gap-2.5">
+                        {timeSlots.map((time) => (
+                          <button
+                            key={time}
+                            onClick={() => setSelectedTime(time)}
+                            className={`py-2.5 px-3 rounded-xl border font-semibold text-[13px] transition-all duration-300 flex items-center justify-center gap-2 ${
+                              selectedTime === time
+                                ? 'border-[#E8A020] bg-[#E8A020] text-white shadow-lg shadow-[#E8A020]/25 scale-[1.02]'
+                                : 'border-gray-200 hover:border-[#E8A020]/50 hover:bg-amber-50/50 text-[#1d1d1f] bg-white'
+                            }`}
+                          >
+                            <Clock size={13} className={selectedTime === time ? 'text-amber-100' : 'text-[#6e6e73]'} />
+                            {time}
+                          </button>
+                        ))}
+                      </div>
                     </div>
                   </div>
 
-                  <div className="mb-auto">
-                    <h4 className="font-semibold text-[#1d1d1f] text-sm mb-4 uppercase tracking-wider">Available Times</h4>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                      {timeSlots.map((time) => (
-                        <button
-                          key={time}
-                          onClick={() => setSelectedTime(time)}
-                          className={`py-3 px-4 rounded-xl border font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 ${
-                            selectedTime === time
-                              ? 'border-[#E8A020] bg-[#E8A020] text-white shadow-lg shadow-[#E8A020]/25 scale-[1.02]'
-                              : 'border-gray-200 hover:border-[#E8A020]/50 hover:bg-amber-50/50 text-[#1d1d1f] bg-white'
-                          }`}
-                        >
-                          <Clock size={14} className={selectedTime === time ? 'text-amber-100' : 'text-[#6e6e73]'} />
-                          {time}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="mt-10 pt-6 border-t border-gray-100 flex justify-end">
+                  <div className="mt-8 pt-6 border-t border-gray-100 flex justify-end">
                     <button
                       onClick={handleNextStep}
                       disabled={selectedDate === null || selectedTime === null}
@@ -190,26 +245,6 @@ export default function Booking() {
                   </div>
 
                   <form className="space-y-7 mb-auto" onSubmit={(e) => e.preventDefault()}>
-                    <div>
-                      <label className="block text-sm font-semibold text-[#1d1d1f] mb-3 uppercase tracking-wider">Service Type</label>
-                      <div className="grid grid-cols-2 gap-3">
-                        {services.map(service => (
-                          <button
-                            key={service}
-                            type="button"
-                            onClick={() => setSelectedService(service)}
-                            className={`py-3 px-4 rounded-xl border font-medium text-sm transition-all duration-300 text-left ${
-                              selectedService === service
-                                ? 'border-[#E8A020] bg-amber-50/50 text-[#E8A020] shadow-sm'
-                                : 'border-gray-200 hover:border-[#E8A020]/50 text-[#1d1d1f]'
-                            }`}
-                          >
-                            {service}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-
                     <div className="grid grid-cols-2 gap-7">
                       <div className="relative group">
                         <input type="text" id="bookFirstName" className="w-full bg-transparent border-b border-gray-200 py-3 text-[#1d1d1f] focus:outline-none focus:border-[#E8A020] transition-colors peer placeholder-transparent" placeholder="First Name" />
@@ -230,6 +265,19 @@ export default function Booking() {
                       <input type="tel" id="bookPhone" className="w-full bg-transparent border-b border-gray-200 py-3 text-[#1d1d1f] focus:outline-none focus:border-[#E8A020] transition-colors peer placeholder-transparent" placeholder="Phone Number" />
                       <label htmlFor="bookPhone" className="absolute left-0 top-3 text-[#6e6e73] text-sm transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[#E8A020] peer-placeholder-shown:top-3 peer-placeholder-shown:text-base">Phone Number</label>
                     </div>
+                    
+                    <div>
+                      <label className="block text-sm font-semibold text-[#1d1d1f] mb-3 uppercase tracking-wider">Select Expected Service</label>
+                      <select 
+                        className="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 text-[#1d1d1f] focus:outline-none focus:border-[#E8A020] transition-colors"
+                        value={selectedService}
+                        onChange={(e) => setSelectedService(e.target.value)}
+                      >
+                        {services.map(service => (
+                          <option key={service} value={service}>{service}</option>
+                        ))}
+                      </select>
+                    </div>
                   </form>
 
                   <div className="mt-10 pt-6 border-t border-gray-100 flex justify-end">
@@ -247,7 +295,7 @@ export default function Booking() {
               {/* Step 3: Success */}
               {step === 3 && (
                 <div className="step-3-content h-full flex flex-col items-center justify-center text-center py-12">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[#E8A020] to-[#00b4a6] rounded-full flex items-center justify-center mb-7 shadow-xl shadow-[#E8A020]/30">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#E8A020] to-[#1a3a5c] rounded-full flex items-center justify-center mb-7 shadow-xl shadow-[#E8A020]/30">
                     <Sparkles size={38} className="text-white" />
                   </div>
                   <h3 className="text-3xl font-bold text-[#1d1d1f] mb-3 tracking-tight">Booking Confirmed!</h3>
