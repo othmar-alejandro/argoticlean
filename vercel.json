@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd argoti-sunshine-clean && npm install && npm run build",
+  "outputDirectory": "argoti-sunshine-clean/dist",
+  "installCommand": "echo 'skip root install'",
+  "framework": "vite"
+}
